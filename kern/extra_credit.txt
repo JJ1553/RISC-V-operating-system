@@ -1,0 +1,14 @@
+Running Extra Credit Tests:
+
+In kernel:
+make clean
+make test.memory
+make run-test-memory
+
+At this point you will see "vptr length valid!" and "String valid!"
+
+Now enter "main_test_memory.c" in kern and change two lines:
+-Line 50, change "PAGE_SIZE*5" to "PAGE_SIZE*6". This will cause the checked vptr to be invalid
+-Comment out line 65. This will remove the null terminator at the end of the string and make it invalid
+
+Run the commands again to run kernel and you will see both are invalid (or do one at a time)

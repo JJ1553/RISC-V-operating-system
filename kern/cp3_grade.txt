@@ -1,0 +1,22 @@
+User Programs:
+"ref_count_test.c"
+"locking_test.c"
+"fork_overflow_test.c"
+
+Making KFS: 
+cd ../user
+make clean
+make
+cd ../util
+./makeKFS.sh       -a bash script that automatically runs mkfs with all binaries in user/bin folder
+
+
+Running Kernel:
+cd kern
+make clean
+make kernel.elf
+make run-kernel
+
+Running tests:
+-reference count test: in main.c, change INIT_PROC to "ref_count_test", then run kernel as specified above
+-locking test: in main.c, change INIT_PROC to "locking_test", then run kernel again as specified above
